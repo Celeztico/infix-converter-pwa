@@ -3,10 +3,10 @@ self.addEventListener('install', e => {
     caches.open('converter-cache').then(cache =>
       cache.addAll([
         '/',
-        '/index.html',
-        '/style.css',
-        '/script.js',
-        '/manifest.json'
+        '/infix-converter-pwa/index.html',
+        '/infix-converter-pwa/style.css',
+        '/infix-converter-pwa/script.js',
+        '/infix-converter-pwa/manifest.json'
       ])
     )
   );
