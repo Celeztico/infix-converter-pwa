@@ -1,36 +1,111 @@
+/* Reset and base */
 body {
-  font-family: Arial, sans-serif;
-  margin: 2rem;
-  background: #f5f5f5;
-}
-
-h1, h2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(120deg, #f0f4ff, #e3ffe7);
   color: #333;
+  line-height: 1.6;
 }
 
-input {
+/* Heading styles */
+h1, h2 {
+  text-align: center;
+  margin: 1rem 0;
+  color: #2c3e50;
+}
+
+h1 {
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+/* Input and button */
+input[type="text"] {
   width: 60%;
-  padding: 0.5rem;
-  margin-right: 1rem;
+  padding: 10px;
+  margin: 1rem auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: block;
+  font-size: 1rem;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 }
 
 button {
-  padding: 0.5rem 1rem;
+  padding: 10px 20px;
   margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3f51b5;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+button:hover {
+  background-color: #303f9f;
+}
+
+/* Result display */
+#result {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem;
+  text-align: center;
+  color: #34495e;
+}
+
+/* Table styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin: 1rem auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 th, td {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
   text-align: center;
 }
 
-tr:nth-child(even) {
-  background-color: #e9e9e9;
+thead {
+  background-color: #3f51b5;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #dfe9ff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  input[type="text"] {
+    width: 90%;
+  }
+
+  button {
+    width: 90%;
+    margin: 0.5rem auto;
+    display: block;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
 }
