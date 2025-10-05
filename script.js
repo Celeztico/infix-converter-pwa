@@ -15,6 +15,10 @@ function isOperand(c) {
   return /^[a-zA-Z0-9]$/.test(c);
 }
 
+function isRightAssociative(c){
+  return c==='^';
+}
+
 function reverse(str) {
   return str.split('').reverse().join('');
 }
@@ -53,7 +57,8 @@ function infixToPostfixWithSteps(infix) {
       while (
         stack.length &&
         isOperator(stack[stack.length - 1]) &&
-        precedence(stack[stack.length - 1]) >= precedence(ch)
+        precedence(stack[stack.length - 1]) >= precedence(ch) &&
+        !isRightAssociative(ch)
       ) {
         postfix += stack.pop();
       }
